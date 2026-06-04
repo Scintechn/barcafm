@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Design tokens — derived from the Barca FM logo (lime green) and a deep
+   charcoal-with-green undertone for hero/dark surfaces. Tailwind v4 @theme. */
+@theme {
+  /* Brand — lime/grass green, sampled from the BarcaFM logo */
+  --color-brand-50: #f4fbe7;
+  --color-brand-100: #e5f7c9;
+  --color-brand-200: #ccee96;
+  --color-brand-300: #b0e163;
+  --color-brand-400: #95d33b;
+  --color-brand-500: #7cc42a;
+  --color-brand-600: #5fa61c;
+  --color-brand-700: #4a8418;
+  --color-brand-800: #3a6816;
+  --color-brand-900: #2d5215;
+  --color-brand-950: #152e0a;
+
+  /* Ink — neutral near-black with cool undertone */
+  --color-ink-50: #f6f7f8;
+  --color-ink-100: #ebeef0;
+  --color-ink-200: #d4dade;
+  --color-ink-300: #afbac1;
+  --color-ink-400: #82929c;
+  --color-ink-500: #62727c;
+  --color-ink-600: #4d5b65;
+  --color-ink-700: #404b53;
+  --color-ink-800: #383f46;
+  --color-ink-900: #21262b;
+  --color-ink-950: #0d1014;
+
+  /* Semantic / on-air red */
+  --color-onair: #ef4444;
+
+  --font-sans: var(--font-body, ui-sans-serif, system-ui, sans-serif);
+  --font-display: var(--font-display, ui-sans-serif, system-ui, sans-serif);
+
+  --shadow-glow: 0 10px 40px -10px rgb(124 196 42 / 0.45);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: white;
+    color: var(--color-ink-900);
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+  ::selection {
+    background-color: var(--color-brand-300);
+    color: var(--color-ink-950);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-page { padding-inline: 2rem; }
+  }
+
+  .waves-bg {
+    background-image:
+      radial-gradient(circle at 12% 28%, rgb(124 196 42 / 0.10), transparent 35%),
+      radial-gradient(circle at 88% 72%, rgb(124 196 42 / 0.08), transparent 40%);
+  }
+
+  .pulse-dot {
+    position: relative;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: var(--color-onair);
+  }
+  .pulse-dot::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 9999px;
+    background-color: var(--color-onair);
+    opacity: 0.35;
+    animation: pulse-ring 1.8s ease-out infinite;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.55; }
+  100% { transform: scale(2.3); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot::after { animation: none; }
+  html { scroll-behavior: auto; }
 }
