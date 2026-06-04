@@ -15,7 +15,7 @@ export const pt: Dictionary = {
     schedule: "Programação",
     contact: "Contacto",
     listenLive: "Ouvir agora",
-    requestQuote: "Pedir orçamento",
+    requestQuote: "Anuncie connosco",
     skipToContent: "Saltar para o conteúdo",
   },
 
@@ -33,7 +33,7 @@ export const pt: Dictionary = {
     subhead:
       "Desde os anos 80 a tocar a vida do Minho e do Douro Litoral — música portuguesa, conversa próxima e os negócios da terra.",
     primaryCta: "Ouvir em direto",
-    secondaryCta: "Pedir orçamento",
+    secondaryCta: "Anuncie connosco",
 
     proofYears: "40+",
     proofYearsLabel: "anos no ar",
@@ -48,6 +48,32 @@ export const pt: Dictionary = {
       "A Barca FM nasceu em Ponte da Barca nos anos 80 como rádio pirata e cresceu até se tornar a voz de referência do Alto Minho. Hoje transmite em 99.6 FM para a região e em direto pela internet para a diáspora portuguesa em todo o mundo.",
       "Aqui dá-se voz aos eventos da terra, aos artistas portugueses, às associações e — sim — também aos negócios que fazem a economia local andar.",
     ],
+
+    reachEyebrow: "Alcance",
+    reachTitle: "Onde nos ouvem.",
+    reachSubtitle:
+      "Em FM no Alto Minho, online em todo o mundo e com uma presença forte nas redes. Eis a audiência que a tua mensagem atinge.",
+    reachStats: [
+      { value: "99.6", label: "MHz FM", detail: "Sinal forte no Alto Minho e Douro Litoral" },
+      { value: "5+", label: "concelhos cobertos", detail: "Ponte da Barca, Ponte de Lima, Arcos de Valdevez, Viana do Castelo, parte de Braga" },
+      { value: "24/7", label: "online no mundo", detail: "Streaming em direto via barcafm.pt e portais internacionais" },
+      { value: "38 mil", label: "seguidores nas redes", detail: "Facebook, Instagram e YouTube ativos diariamente" },
+    ],
+    reachAreasTitle: "Concelhos onde se ouve em FM",
+    reachAreas: [
+      "Ponte da Barca",
+      "Arcos de Valdevez",
+      "Ponte de Lima",
+      "Viana do Castelo",
+      "Paredes de Coura",
+      "Melgaço",
+      "Monção",
+      "Caminha",
+      "Vila Verde",
+      "Amares",
+    ],
+    reachClosingLine:
+      "Da diáspora à terra natal — a Barca FM acompanha quem vive aqui e quem nunca esqueceu o Minho.",
 
     whyAdvertiseEyebrow: "Para empresas",
     whyAdvertiseTitle: "Anunciar na Barca FM",
@@ -71,7 +97,7 @@ export const pt: Dictionary = {
         body: "Inauguração, promoção sazonal, evento ao fim-de-semana — desenhamos a campanha para o teu momento.",
       },
     ],
-    whyAdvertiseCta: "Pedir um orçamento",
+    whyAdvertiseCta: "Anuncie connosco",
 
     showsEyebrow: "Diretório",
     showsTitle: "Os negócios que ouves na rádio.",
@@ -92,7 +118,7 @@ export const pt: Dictionary = {
     finalCtaTitle: "Pronto para anunciar na Barca FM?",
     finalCtaSubtitle:
       "Diz-nos quem és, o que queres comunicar e enviamos uma proposta clara — sem compromisso.",
-    finalCtaPrimary: "Pedir orçamento",
+    finalCtaPrimary: "Anuncie connosco",
     finalCtaSecondary: "Ligar agora",
   },
 
@@ -207,8 +233,8 @@ export const pt: Dictionary = {
     },
     cta: {
       title: "O teu negócio também aqui",
-      body: "Aparece no diretório, no ar e nas redes da Barca FM. Pede um orçamento sem compromisso.",
-      button: "Pedir orçamento",
+      body: "Aparece no diretório, no ar e nas redes da Barca FM. Sem compromisso.",
+      button: "Anuncie connosco",
     },
   },
 
@@ -302,7 +328,7 @@ export const pt: Dictionary = {
     callNow: "Ligar",
     emailUs: "Enviar email",
     getDirections: "Como chegar",
-    requestQuote: "Pedir orçamento",
+    requestQuote: "Anuncie connosco",
     requiredField: "Campo obrigatório",
   },
 };

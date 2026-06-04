@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Class-based dark mode. Apply by toggling `.dark` on <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Design tokens — derived from the Barca FM logo (lime green) and a deep
    charcoal-with-green undertone for hero/dark surfaces. Tailwind v4 @theme. */
 @theme {
@@ -41,6 +44,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
   }
   body {
     background-color: white;
@@ -48,6 +55,11 @@
     font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+  .dark body {
+    background-color: var(--color-ink-950);
+    color: var(--color-ink-100);
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;

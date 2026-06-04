@@ -27,7 +27,7 @@ export function Logo({
           <span className="font-display text-base font-extrabold tracking-tight">
             Barca FM
           </span>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-500">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">
             99.6
           </span>
         </span>

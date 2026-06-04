@@ -26,7 +26,8 @@ export function LivePlayer({ t, variant = "hero", location }: Props) {
 
   function toggle() {
     if (!audioRef.current) {
-      const audio = new Audio(business.stream.url);
+      // Use our HTTPS-safe proxy so production (HTTPS) doesn't block the upstream HTTP stream.
+      const audio = new Audio("/api/stream");
       audio.preload = "none";
       audio.volume = volume;
       audio.addEventListener("playing", () => setState("playing"));

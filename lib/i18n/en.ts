@@ -15,7 +15,7 @@ export const en: Dictionary = {
     schedule: "Schedule",
     contact: "Contact",
     listenLive: "Listen live",
-    requestQuote: "Request a quote",
+    requestQuote: "Advertise with us",
     skipToContent: "Skip to content",
   },
 
@@ -33,7 +33,7 @@ export const en: Dictionary = {
     subhead:
       "Broadcasting the life of the Minho and Douro Litoral since the 1980s — Portuguese music, real conversation, and the businesses of our region.",
     primaryCta: "Listen live",
-    secondaryCta: "Request a quote",
+    secondaryCta: "Advertise with us",
 
     proofYears: "40+",
     proofYearsLabel: "years on air",
@@ -48,6 +48,32 @@ export const en: Dictionary = {
       "Barca FM started in Ponte da Barca in the 1980s as a pirate radio and grew into the reference voice of the Alto Minho. Today it broadcasts on 99.6 FM across the region and live online to the Portuguese diaspora worldwide.",
       "We give airtime to the events of the land, to Portuguese artists, to local associations — and yes, to the businesses that make the local economy run.",
     ],
+
+    reachEyebrow: "Reach",
+    reachTitle: "Where we're heard.",
+    reachSubtitle:
+      "On FM across the Alto Minho, online worldwide, and strong on social. This is the audience your message reaches.",
+    reachStats: [
+      { value: "99.6", label: "MHz FM", detail: "Strong signal across Alto Minho and Douro Litoral" },
+      { value: "5+", label: "counties covered", detail: "Ponte da Barca, Ponte de Lima, Arcos de Valdevez, Viana do Castelo, parts of Braga" },
+      { value: "24/7", label: "online worldwide", detail: "Live streaming via barcafm.pt and international portals" },
+      { value: "38k", label: "social followers", detail: "Facebook, Instagram and YouTube active daily" },
+    ],
+    reachAreasTitle: "Counties where we're heard on FM",
+    reachAreas: [
+      "Ponte da Barca",
+      "Arcos de Valdevez",
+      "Ponte de Lima",
+      "Viana do Castelo",
+      "Paredes de Coura",
+      "Melgaço",
+      "Monção",
+      "Caminha",
+      "Vila Verde",
+      "Amares",
+    ],
+    reachClosingLine:
+      "From the diaspora to the homeland — Barca FM stays with those who live here and those who never forgot the Minho.",
 
     whyAdvertiseEyebrow: "For businesses",
     whyAdvertiseTitle: "Advertise on Barca FM",
@@ -71,7 +97,7 @@ export const en: Dictionary = {
         body: "Grand opening, seasonal promo, weekend event — we design the campaign around your moment.",
       },
     ],
-    whyAdvertiseCta: "Request a quote",
+    whyAdvertiseCta: "Advertise with us",
 
     showsEyebrow: "Directory",
     showsTitle: "The businesses you hear on the radio.",
@@ -92,7 +118,7 @@ export const en: Dictionary = {
     finalCtaTitle: "Ready to advertise on Barca FM?",
     finalCtaSubtitle:
       "Tell us who you are and what you want to communicate — we'll send a clear proposal, no strings attached.",
-    finalCtaPrimary: "Request a quote",
+    finalCtaPrimary: "Advertise with us",
     finalCtaSecondary: "Call now",
   },
 
@@ -189,8 +215,8 @@ export const en: Dictionary = {
     },
     cta: {
       title: "Your business here too",
-      body: "Appear in the directory, on air, and across Barca FM's channels. Request a no-obligation quote.",
-      button: "Request a quote",
+      body: "Appear in the directory, on air, and across Barca FM's channels. No strings attached.",
+      button: "Advertise with us",
     },
   },
 
@@ -284,7 +310,7 @@ export const en: Dictionary = {
     callNow: "Call",
     emailUs: "Email us",
     getDirections: "Get directions",
-    requestQuote: "Request a quote",
+    requestQuote: "Advertise with us",
     requiredField: "Required field",
   },
 };

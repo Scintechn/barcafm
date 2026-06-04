@@ -93,34 +93,34 @@ export default async function AdvertiserDetailPage({
         <Container>
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-7">
-              <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700">
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700 dark:text-brand-300">
                 {category}
               </span>
-              <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-900 md:text-5xl">
+              <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-900 md:text-5xl dark:text-white">
                 {ad.name}
               </h1>
-              <p className="mt-4 text-base leading-relaxed text-ink-700 md:text-lg">
+              <p className="mt-4 text-base leading-relaxed text-ink-700 md:text-lg dark:text-ink-300">
                 {ad.shortDescription}
               </p>
               {ad.longDescription && (
-                <p className="mt-3 text-base leading-relaxed text-ink-600">
+                <p className="mt-3 text-base leading-relaxed text-ink-600 dark:text-ink-400">
                   {ad.longDescription}
                 </p>
               )}
 
               {ad.promo && (
-                <div className="mt-6 flex items-start gap-3 rounded-2xl bg-brand-50 p-4">
-                  <Tag className="h-5 w-5 shrink-0 text-brand-700 mt-0.5" aria-hidden="true" />
+                <div className="mt-6 flex items-start gap-3 rounded-2xl bg-brand-50 p-4 dark:bg-brand-500/15">
+                  <Tag className="h-5 w-5 shrink-0 text-brand-700 mt-0.5 dark:text-brand-300" aria-hidden="true" />
                   <div>
-                    <h3 className="font-display text-base font-bold text-brand-900">
+                    <h3 className="font-display text-base font-bold text-brand-900 dark:text-brand-100">
                       {t.detail.promoTitle}
                     </h3>
-                    <p className="mt-1 text-sm text-brand-900">
+                    <p className="mt-1 text-sm text-brand-900 dark:text-brand-100">
                       {ad.promo.code && <strong>{ad.promo.code}: </strong>}
                       {ad.promo.description}
                     </p>
                     {ad.promo.validUntil && (
-                      <p className="mt-1 text-xs text-brand-800">
+                      <p className="mt-1 text-xs text-brand-800 dark:text-brand-300">
                         {ad.promo.validUntil}
                       </p>
                     )}
@@ -130,14 +130,14 @@ export default async function AdvertiserDetailPage({
 
               {ad.services && ad.services.length > 0 && (
                 <div className="mt-8">
-                  <h3 className="font-display text-lg font-bold text-ink-900">
+                  <h3 className="font-display text-lg font-bold text-ink-900 dark:text-white">
                     {t.detail.servicesTitle}
                   </h3>
                   <ul className="mt-3 flex flex-wrap gap-2">
                     {ad.services.map((s) => (
                       <li
                         key={s}
-                        className="rounded-full bg-ink-100 px-3 py-1.5 text-sm text-ink-700"
+                        className="rounded-full bg-ink-100 px-3 py-1.5 text-sm text-ink-700 dark:bg-ink-800 dark:text-ink-200"
                       >
                         {s}
                       </li>
@@ -165,7 +165,7 @@ export default async function AdvertiserDetailPage({
                     href={directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-ink-200 px-6 font-semibold text-ink-900 hover:border-brand-500 hover:text-brand-700"
+                    className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-ink-200 px-6 font-semibold text-ink-900 hover:border-brand-500 hover:text-brand-700 dark:border-ink-700 dark:text-white dark:hover:border-brand-500 dark:hover:text-brand-300"
                   >
                     <MapPin className="h-4 w-4" aria-hidden="true" />
                     {t.cardDirections}
@@ -176,7 +176,7 @@ export default async function AdvertiserDetailPage({
                     href={ad.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-ink-200 px-6 font-semibold text-ink-900 hover:border-brand-500 hover:text-brand-700"
+                    className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-ink-200 px-6 font-semibold text-ink-900 hover:border-brand-500 hover:text-brand-700 dark:border-ink-700 dark:text-white dark:hover:border-brand-500 dark:hover:text-brand-300"
                   >
                     <Globe className="h-4 w-4" aria-hidden="true" />
                     {t.cardWebsite}
@@ -296,11 +296,11 @@ export default async function AdvertiserDetailPage({
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-2xl border border-ink-100 bg-white p-5">
-      <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-ink-500">
+    <div className="rounded-2xl border border-ink-100 bg-white p-5 dark:border-ink-800 dark:bg-ink-900">
+      <h3 className="text-xs font-bold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">
         {title}
       </h3>
-      <div className="mt-3 space-y-2 text-sm text-ink-700">{children}</div>
+      <div className="mt-3 space-y-2 text-sm text-ink-700 dark:text-ink-300">{children}</div>
     </div>
   );
 }
@@ -314,7 +314,7 @@ function Row({
 }) {
   return (
     <div className="flex items-start gap-2">
-      <span className="mt-0.5 shrink-0 text-ink-400" aria-hidden="true">
+      <span className="mt-0.5 shrink-0 text-ink-400 dark:text-ink-500" aria-hidden="true">
         {icon}
       </span>
       <div className="min-w-0">{children}</div>

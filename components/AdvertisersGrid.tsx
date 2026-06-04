@@ -51,7 +51,7 @@ export function AdvertisersGrid({
             onChange={(e) => setQuery(e.target.value)}
             placeholder={t.searchPlaceholder}
             aria-label={t.searchPlaceholder}
-            className="h-12 w-full rounded-full border border-ink-200 bg-white pl-11 pr-4 text-base text-ink-900 placeholder:text-ink-400 outline-none focus:border-brand-500"
+            className="h-12 w-full rounded-full border border-ink-200 bg-white pl-11 pr-4 text-base text-ink-900 placeholder:text-ink-400 outline-none focus:border-brand-500 dark:border-ink-700 dark:bg-ink-900 dark:text-white dark:placeholder:text-ink-500"
           />
         </label>
       </div>
@@ -68,8 +68,8 @@ export function AdvertisersGrid({
       </div>
 
       {filtered.length === 0 ? (
-        <div className="rounded-2xl border border-dashed border-ink-200 px-6 py-16 text-center">
-          <p className="text-ink-500">{t.emptyResults}</p>
+        <div className="rounded-2xl border border-dashed border-ink-200 px-6 py-16 text-center dark:border-ink-700">
+          <p className="text-ink-500 dark:text-ink-400">{t.emptyResults}</p>
         </div>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -103,8 +103,8 @@ function CatButton({
       className={cn(
         "shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
         active
-          ? "bg-ink-900 text-white"
-          : "bg-ink-50 text-ink-700 hover:bg-ink-100"
+          ? "bg-ink-900 text-white dark:bg-brand-500 dark:text-ink-950"
+          : "bg-ink-50 text-ink-700 hover:bg-ink-100 dark:bg-ink-800 dark:text-ink-300 dark:hover:bg-ink-700 dark:hover:text-white"
       )}
     >
       {children}

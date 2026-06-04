@@ -92,11 +92,11 @@ export function QuoteForm({ t, locale }: { t: QuoteFormStrings; locale: Locale }
         />
       </Field>
 
-      <label className="flex items-start gap-3 text-sm text-ink-700">
-        <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 rounded border-ink-300 text-brand-500 focus:ring-brand-500" />
+      <label className="flex items-start gap-3 text-sm text-ink-700 dark:text-ink-300">
+        <input name="consent" type="checkbox" required className="mt-1 h-4 w-4 rounded border-ink-300 text-brand-500 focus:ring-brand-500 dark:border-ink-600" />
         <span>
           {t.consentLabel}{" "}
-          <Link href={`/${locale}/privacidade`} className="text-brand-700 underline decoration-brand-300 underline-offset-4 hover:text-brand-900">
+          <Link href={`/${locale}/privacidade`} className="text-brand-700 underline decoration-brand-300 underline-offset-4 hover:text-brand-900 dark:text-brand-300 dark:decoration-brand-400 dark:hover:text-brand-200">
             {t.consentLinkText}
           </Link>
           .
@@ -139,9 +139,9 @@ function Field({
 }) {
   return (
     <label className="flex flex-col gap-1.5">
-      <span className="text-sm font-semibold text-ink-800">{label}</span>
+      <span className="text-sm font-semibold text-ink-800 dark:text-ink-200">{label}</span>
       {children}
-      {error && <span className="text-xs text-red-600">{error}</span>}
+      {error && <span className="text-xs text-red-600 dark:text-red-400">{error}</span>}
     </label>
   );
 }
@@ -150,9 +150,10 @@ function input(hasError: boolean, extra = "") {
   return cn(
     "h-12 rounded-xl border bg-white px-4 text-base text-ink-900 outline-none transition-colors",
     "placeholder:text-ink-400",
+    "dark:bg-ink-900 dark:text-white dark:placeholder:text-ink-500",
     hasError
-      ? "border-red-400 focus:border-red-500"
-      : "border-ink-200 focus:border-brand-500",
+      ? "border-red-400 focus:border-red-500 dark:border-red-500/60"
+      : "border-ink-200 focus:border-brand-500 dark:border-ink-700",
     extra
   );
 }

@@ -73,7 +73,7 @@ export default async function ContactPage({
                 event="phone_click"
                 eventProps={{ location: "contact-page" }}
                 href={business.phone.landline.href}
-                className="font-display text-2xl font-bold text-ink-900 hover:text-brand-700"
+                className="font-display text-2xl font-bold text-ink-900 hover:text-brand-700 dark:text-white dark:hover:text-brand-300"
               >
                 {business.phone.landline.display}
               </TrackedLink>
@@ -82,14 +82,14 @@ export default async function ContactPage({
             <ContactCard icon={<Mail className="h-5 w-5" />} title={t.emailTitle} subtitle={t.emailBody}>
               <a
                 href={business.email.href}
-                className="font-display text-lg font-bold text-ink-900 hover:text-brand-700 break-all"
+                className="font-display text-lg font-bold text-ink-900 hover:text-brand-700 break-all dark:text-white dark:hover:text-brand-300"
               >
                 {business.email.display}
               </a>
             </ContactCard>
 
             <ContactCard icon={<Clock className="h-5 w-5" />} title={t.hoursTitle} subtitle={t.hoursBody}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1.5 text-sm font-semibold text-brand-900">
+              <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1.5 text-sm font-semibold text-brand-900 dark:bg-brand-500/15 dark:text-brand-200">
                 <span className="pulse-dot" aria-hidden="true" />
                 24/7
               </span>
@@ -110,7 +110,7 @@ export default async function ContactPage({
           </div>
 
           <div className="lg:col-span-7">
-            <div className="overflow-hidden rounded-2xl border border-ink-100 bg-ink-100">
+            <div className="overflow-hidden rounded-2xl border border-ink-100 bg-ink-100 dark:border-ink-800 dark:bg-ink-900">
               <iframe
                 src={business.mapEmbedSrc}
                 width="100%"
@@ -142,14 +142,14 @@ function ContactCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-2xl border border-ink-100 bg-white p-6">
+    <div className="rounded-2xl border border-ink-100 bg-white p-6 dark:border-ink-800 dark:bg-ink-900">
       <div className="flex items-start gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300">
           {icon}
         </div>
         <div>
-          <h3 className="font-display text-lg font-bold text-ink-900">{title}</h3>
-          <p className="mt-0.5 text-sm text-ink-600">{subtitle}</p>
+          <h3 className="font-display text-lg font-bold text-ink-900 dark:text-white">{title}</h3>
+          <p className="mt-0.5 text-sm text-ink-600 dark:text-ink-400">{subtitle}</p>
         </div>
       </div>
       <div className="mt-4">{children}</div>

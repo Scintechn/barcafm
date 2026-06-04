@@ -33,9 +33,23 @@ export const metadata: Metadata = {
   icons: { icon: "/icon.svg" },
 };
 
+// Inline anti-FOUC script: reads localStorage `theme` + system preference and
+// applies the `.dark` class to <html> BEFORE the first paint. Must remain
+// inline (no external src) and synchronous.
+const themeInitScript = `
+(function(){try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(t!=='light'&&d)){document.documentElement.classList.add('dark');}}catch(e){}})();
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt" className={`${display.variable} ${body.variable}`}>
+    <html
+      lang="pt"
+      className={`${display.variable} ${body.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-screen antialiased">{children}</body>
     </html>
   );

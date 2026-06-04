@@ -44,6 +44,14 @@ export type Dictionary = {
     aboutTitle: string;
     aboutBody: string[];
 
+    reachEyebrow: string;
+    reachTitle: string;
+    reachSubtitle: string;
+    reachStats: { value: string; label: string; detail: string }[];
+    reachAreasTitle: string;
+    reachAreas: string[];
+    reachClosingLine: string;
+
     whyAdvertiseEyebrow: string;
     whyAdvertiseTitle: string;
     whyAdvertiseSubtitle: string;

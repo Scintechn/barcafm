@@ -70,7 +70,7 @@ export default async function AdvertisingPage({
       <Section variant="default">
         <Container>
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700 dark:text-brand-300">
               {t.formatsTitle}
             </span>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-4xl">
@@ -82,14 +82,14 @@ export default async function AdvertisingPage({
               const Icon = FormatIcon[i] || Mic;
               return (
                 <Reveal key={f.title} delay={i * 60}>
-                  <div className="flex h-full flex-col rounded-2xl border border-ink-100 bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-md">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+                  <div className="flex h-full flex-col rounded-2xl border border-ink-100 bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-md dark:border-ink-800 dark:bg-ink-950 dark:hover:border-brand-500/60">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
-                    <h3 className="mt-4 font-display text-lg font-bold text-ink-900">
+                    <h3 className="mt-4 font-display text-lg font-bold text-ink-900 dark:text-white">
                       {f.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-600">
+                    <p className="mt-2 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
                       {f.body}
                     </p>
                   </div>
@@ -103,7 +103,7 @@ export default async function AdvertisingPage({
       <Section variant="soft">
         <Container>
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700 dark:text-brand-300">
               {t.processTitle}
             </span>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-4xl">
@@ -114,15 +114,15 @@ export default async function AdvertisingPage({
             {t.steps.map((s, i) => (
               <li
                 key={s.title}
-                className="rounded-2xl border border-ink-100 bg-white p-6"
+                className="rounded-2xl border border-ink-100 bg-white p-6 dark:border-ink-800 dark:bg-ink-950"
               >
                 <div className="font-display text-3xl font-extrabold text-brand-500">
                   0{i + 1}
                 </div>
-                <h3 className="mt-3 font-display text-lg font-bold text-ink-900">
+                <h3 className="mt-3 font-display text-lg font-bold text-ink-900 dark:text-white">
                   {s.title.replace(/^\d+\.\s*/, "")}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-600">{s.body}</p>
+                <p className="mt-2 text-sm leading-relaxed text-ink-600 dark:text-ink-300">{s.body}</p>
               </li>
             ))}
           </ol>
@@ -132,7 +132,7 @@ export default async function AdvertisingPage({
       <Section variant="default" id="orcamento">
         <Container className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700">
+            <span className="text-xs font-bold uppercase tracking-[0.18em] text-brand-700 dark:text-brand-300">
               {t.formTitle}
             </span>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-4xl">

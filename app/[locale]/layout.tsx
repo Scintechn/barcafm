@@ -129,7 +129,7 @@ export default async function LocaleLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="flex min-h-screen flex-col">
-        <Header t={dict.nav} liveBadge={dict.liveBadge} locale={locale} />
+        <Header t={dict.nav} locale={locale} />
         <main id="main" className="flex-1">
           {children}
         </main>

@@ -68,32 +68,32 @@ export default async function SchedulePage({
 
       <Section variant="default">
         <Container>
-          <h2 className="font-display text-2xl font-bold text-ink-900 md:text-3xl">
+          <h2 className="font-display text-2xl font-bold text-ink-900 md:text-3xl dark:text-white">
             {t.daysTitle}
           </h2>
           <ol className="mt-8 space-y-3">
             {t.blocks.map((b) => (
               <li
                 key={b.title}
-                className="group grid items-start gap-4 rounded-2xl border border-ink-100 bg-white p-5 transition-colors hover:border-brand-300 md:grid-cols-12 md:p-6"
+                className="group grid items-start gap-4 rounded-2xl border border-ink-100 bg-white p-5 transition-colors hover:border-brand-300 md:grid-cols-12 md:p-6 dark:border-ink-800 dark:bg-ink-950 dark:hover:border-brand-500/60"
               >
                 <div className="md:col-span-3">
-                  <span className="rounded-full bg-brand-100 px-3 py-1 font-display text-sm font-bold text-brand-900">
+                  <span className="rounded-full bg-brand-100 px-3 py-1 font-display text-sm font-bold text-brand-900 dark:bg-brand-500/15 dark:text-brand-200">
                     {b.time}
                   </span>
                 </div>
                 <div className="md:col-span-9">
-                  <h3 className="font-display text-lg font-bold text-ink-900 md:text-xl">
+                  <h3 className="font-display text-lg font-bold text-ink-900 md:text-xl dark:text-white">
                     {b.title}
                   </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-600 md:text-base">
+                  <p className="mt-1 text-sm leading-relaxed text-ink-600 md:text-base dark:text-ink-300">
                     {b.body}
                   </p>
                 </div>
               </li>
             ))}
           </ol>
-          <p className="mt-8 text-sm italic text-ink-500">{t.note}</p>
+          <p className="mt-8 text-sm italic text-ink-500 dark:text-ink-400">{t.note}</p>
         </Container>
       </Section>
     </>

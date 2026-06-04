@@ -108,12 +108,82 @@ export default async function HomePage({
               {t.aboutTitle}
             </h2>
           </div>
-          <div className="md:col-span-7 md:col-start-6 flex flex-col gap-4 text-base leading-relaxed text-ink-700 md:text-lg">
+          <div className="md:col-span-7 md:col-start-6 flex flex-col gap-4 text-base leading-relaxed text-ink-700 md:text-lg dark:text-ink-300">
             {t.aboutBody.map((p, i) => (
               <Reveal key={i} delay={i * 80}>
                 <p>{p}</p>
               </Reveal>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* REACH / ALCANCE */}
+      <Section variant="default" id="reach" className="!pt-0">
+        <Container>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-ink-950 to-ink-900 px-6 py-12 text-white md:px-12 md:py-16">
+            <div
+              className="pointer-events-none absolute inset-0 opacity-50"
+              style={{
+                background:
+                  "radial-gradient(circle at 15% 20%, rgba(124,196,42,0.18), transparent 45%), radial-gradient(circle at 90% 80%, rgba(124,196,42,0.12), transparent 45%)",
+              }}
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <div className="max-w-2xl">
+                <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-300">
+                  <Radio className="h-3.5 w-3.5" aria-hidden="true" />
+                  {t.reachEyebrow}
+                </span>
+                <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-4xl">
+                  {t.reachTitle}
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-white/70 md:text-lg">
+                  {t.reachSubtitle}
+                </p>
+              </div>
+
+              <dl className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {t.reachStats.map((s, i) => (
+                  <Reveal key={s.label} delay={i * 60}>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:border-brand-400/40">
+                      <dt className="font-display text-3xl font-extrabold text-brand-300 md:text-4xl">
+                        {s.value}
+                      </dt>
+                      <dd>
+                        <p className="mt-1 text-sm font-semibold uppercase tracking-wider text-white/90">
+                          {s.label}
+                        </p>
+                        <p className="mt-2 text-xs leading-relaxed text-white/55">
+                          {s.detail}
+                        </p>
+                      </dd>
+                    </div>
+                  </Reveal>
+                ))}
+              </dl>
+
+              <div className="mt-10 border-t border-white/10 pt-8">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-300">
+                  {t.reachAreasTitle}
+                </p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {t.reachAreas.map((a) => (
+                    <li
+                      key={a}
+                      className="rounded-full bg-white/5 px-3 py-1.5 text-sm font-medium text-white/85 ring-1 ring-white/10"
+                    >
+                      {a}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <p className="mt-8 max-w-3xl text-base italic text-white/65 md:text-lg">
+                {t.reachClosingLine}
+              </p>
+            </div>
           </div>
         </Container>
       </Section>
@@ -126,7 +196,7 @@ export default async function HomePage({
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-4xl">
               {t.whyAdvertiseTitle}
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-ink-600 md:text-lg">
+            <p className="mt-4 text-base leading-relaxed text-ink-600 md:text-lg dark:text-ink-300">
               {t.whyAdvertiseSubtitle}
             </p>
           </div>
@@ -134,14 +204,14 @@ export default async function HomePage({
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {t.whyAdvertiseItems.map((item, i) => (
               <Reveal key={item.title} delay={i * 70}>
-                <div className="flex h-full flex-col rounded-2xl border border-ink-100 bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-md">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-brand-700">
+                <div className="flex h-full flex-col rounded-2xl border border-ink-100 bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-md dark:border-ink-800 dark:bg-ink-950 dark:hover:border-brand-500/60">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-brand-700 dark:bg-brand-500/15 dark:text-brand-300">
                     <WhyIcon i={i} />
                   </div>
-                  <h3 className="mt-4 font-display text-lg font-bold text-ink-900">
+                  <h3 className="mt-4 font-display text-lg font-bold text-ink-900 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-600">
+                  <p className="mt-2 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
                     {item.body}
                   </p>
                 </div>
@@ -167,7 +237,7 @@ export default async function HomePage({
               <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-4xl">
                 {t.showsTitle}
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-ink-600 md:text-lg">
+              <p className="mt-4 text-base leading-relaxed text-ink-600 md:text-lg dark:text-ink-300">
                 {t.showsSubtitle}
               </p>
             </div>
@@ -281,7 +351,7 @@ function Eyebrow({
   tone?: "default" | "brand" | "dark";
 }) {
   const tones = {
-    default: "text-brand-700",
+    default: "text-brand-700 dark:text-brand-300",
     brand: "text-brand-300",
     dark: "text-ink-950",
   };
