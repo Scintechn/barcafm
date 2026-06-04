@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { LivePlayer } from "@/components/LivePlayer";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 import {
   locales,
   defaultLocale,
@@ -136,6 +137,7 @@ export default async function LocaleLayout({
         <Footer t={dict.footer} nav={dict.nav} locale={locale} />
       </div>
       <LivePlayer t={dict.liveBadge} variant="fab" location="fab" />
+      <WhatsAppFab t={dict.whatsapp} />
       <Analytics />
       <span className="sr-only">{singleLineAddress()}</span>
     </>

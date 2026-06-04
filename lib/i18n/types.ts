@@ -27,6 +27,12 @@ export type Dictionary = {
     loading: string;
   };
 
+  whatsapp: {
+    label: string;
+    ariaLabel: string;
+    defaultMessage: string;
+  };
+
   home: {
     eyebrow: string;
     headline: string;

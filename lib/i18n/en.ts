@@ -27,6 +27,13 @@ export const en: Dictionary = {
     loading: "Connecting…",
   },
 
+  whatsapp: {
+    label: "WhatsApp",
+    ariaLabel: "Chat with Barca FM on WhatsApp",
+    defaultMessage:
+      "Hi Barca FM! I'd like to know more about advertising on the radio.",
+  },
+
   home: {
     eyebrow: "99.6 FM · Ponte da Barca",
     headline: "The radio with the most heart in northern Portugal.",

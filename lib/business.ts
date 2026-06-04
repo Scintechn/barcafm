@@ -23,6 +23,15 @@ export const business = {
     landline: { display: "+351 258 480 700", href: "tel:+351258480700" },
   },
 
+  // WhatsApp — toggle the floating WhatsApp CTA by setting/clearing `number`.
+  // Use international format digits-only (no +, no spaces) for the wa.me URL.
+  // The number below is the studio landline; replace with the real WhatsApp
+  // Business number once confirmed. Set `number: null` to hide the FAB.
+  whatsapp: {
+    number: "351258480700" as string | null,
+    display: "+351 258 480 700",
+  },
+
   email: { display: "geral@barcafm.pt", href: "mailto:geral@barcafm.pt" },
 
   // Always-on broadcaster; surface "24h no ar" instead of opening hours.
@@ -77,4 +86,11 @@ export function singleLineAddress(): string {
 
 export function fullName(): string {
   return `${business.brandName} • ${business.frequency}`;
+}
+
+export function whatsappLink(message?: string): string | null {
+  const num = business.whatsapp.number;
+  if (!num) return null;
+  const base = `https://wa.me/${num}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
 }
