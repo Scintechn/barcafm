@@ -34,9 +34,12 @@ export const business = {
   mapEmbedSrc:
     "https://www.google.com/maps?q=Edif%C3%ADcio+Afonso+III+R.+do+Emigrante+14+Ponte+da+Barca&output=embed",
 
-  // Stream — exposed publicly, surfaced in the HTML <audio> element.
+  // Stream — upstream is HTTP-only Shoutcast on Centova.
+  // Browser never touches these URLs directly; the /api/stream route
+  // server-side-fetches them and re-serves over our HTTPS origin so the
+  // browser doesn't block mixed content.
   stream: {
-    url: "https://centova.radios.pt:8483/stream",
+    url: "http://centova.radios.pt:8483/stream",
     fallbackUrl: "http://centova.radios.pt:8483/;stream.nsv",
     bitrate: "128 kbps",
     format: "audio/mpeg",
